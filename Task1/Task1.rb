@@ -14,7 +14,7 @@ def filter arr
   result = []
   i = 0
 
-  return result if !block_given?
+  return result unless block_given?
 
   while i < arr.length do
     result.push arr[i] if yield arr[i], i, arr
@@ -25,7 +25,7 @@ def filter arr
 end
 
 def detect arr
-  return nil if !block_given?
+  return nil unless block_given?
 
   i = 0
 
@@ -38,14 +38,14 @@ def detect arr
 end
 
 def count arr, &block
-  return nil if !block_given?
+  return nil unless block_given?
 
   filtered_elements = filter arr, &block
   filtered_elements.length
 end	
 
 def any? arr
-  return false if !block_given?
+  return false unless block_given?
 
   i = 0
 
@@ -58,12 +58,12 @@ def any? arr
 end
 
 def every? arr
-  return false if !block_given?
+  return false unless block_given?
 
   i = arr.length - 1
 
   until i < 0 do
-    return false if !yield arr[i], i, arr
+    return false unless yield arr[i], i, arr
     i -= 1
   end
 
@@ -71,7 +71,7 @@ def every? arr
 end
 
 def reduce sum, arr
-  return sum if !block_given?
+  return sum unless block_given?
 
   i = 0
 
