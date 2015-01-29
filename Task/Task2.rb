@@ -41,12 +41,20 @@ end
 
 def reverse arr
   result = []
+  i = arr.length - 1
 
-  while arr.length > 0
-    result << arr.pop
+  until i < 0 do
+    result << arr[i]
+    i -= 1
   end
+
+  # while arr.length > 0
+  #   result << arr.pop
+  # end
   result
 end
+
+p reverse [1,2,3,4,5]
 
 def flatten arr
   arr.reduce([]) do |memo, el|
