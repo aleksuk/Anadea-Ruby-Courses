@@ -48,9 +48,6 @@ def reverse arr
     i -= 1
   end
 
-  # while arr.length > 0
-  #   result << arr.pop
-  # end
   result
 end
 
