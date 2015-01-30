@@ -76,10 +76,11 @@ def merge *objects
 end
  
 def get_local_max arr
+  last_element_index = arr.length - 1
   result = []
- 
+    
   arr.each_with_index do |el, i|
-    if i != 0 && el > arr[i - 1] && el > arr[i + 1]
+    if i != 0 && i < last_element_index - 1 && el > arr[i - 1] && el > arr[i + 1]
       result.push el
     end
   end
