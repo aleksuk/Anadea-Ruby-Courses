@@ -51,8 +51,6 @@ def reverse arr
   result
 end
 
-p reverse [1,2,3,4,5]
-
 def flatten arr
   arr.reduce([]) do |memo, el|
     if el.is_a?(Array)
