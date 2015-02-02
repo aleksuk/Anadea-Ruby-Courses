@@ -78,7 +78,7 @@ def get_local_max arr
   result = []
     
   arr.each_with_index do |el, i|
-    if i != 0 && i < last_element_index - 1 && el > arr[i - 1] && el > arr[i + 1]
+    if i != 0 && i < last_element_index && el > arr[i - 1] && el > arr[i + 1]
       result.push el
     end
   end
@@ -91,27 +91,23 @@ def sort_by_length arr
 end
  
 def sort_by_even_numbers arr
-  arr.sort do |a, b| 
-    if a % 2 == 0
-      1
-    else
-      -1
-    end
+  arr.sort_by do |el| 
+    [e % 2, -e]
   end
 end
  
 def sort_by_not_even_numbers arr
   sort_by_even_numbers(arr).reverse
 end
- 
-def group_by_parameter data, param, is_method = false
+
+def group_by data, &block
   result = {}
- 
+
   data.each do |el|
-    parameter = is_method ? el.send(param) : el[param]
+    parameter = block.call el
     result[parameter] ||= []
     result[parameter] << el
   end
- 
+
   result
 end
