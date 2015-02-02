@@ -6,7 +6,7 @@ describe "Method" do
   let(:input_data) { [1, 2, 3, 4] }
 
   context "#map" do
-    it "should return new arr with modified array elements" do
+    it "should return new arr with modified elements" do
       result = map input_data do |el|
         el * 2
       end
