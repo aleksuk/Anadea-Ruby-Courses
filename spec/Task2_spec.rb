@@ -14,7 +14,7 @@ describe "Method" do
       expect(result).to eq([2, 4, 6, 8])
     end
 
-    it "should return empty arr with nil elements if block wasn't pass" do
+    it "should return arr with nil elements if block wasn't pass" do
       result = map input_data do |el|
       end
 
@@ -31,7 +31,7 @@ describe "Method" do
       expect(result).to eq([2, 4])
     end
 
-    it "should return empty arr, if anyone elements doesn't satisfy condition" do
+    it "should return empty array, if anyone element doesn't satisfy condition" do
       result = select input_data do |el|
         el > 100
       end
@@ -113,7 +113,7 @@ describe "Method" do
   end
 
   context "#reverse" do
-    it "should return` elements of array in reverse order" do
+    it "should return array with elements in reverse order" do
       result = reverse input_data
 
       expect(result).to eq([4, 3, 2, 1])
