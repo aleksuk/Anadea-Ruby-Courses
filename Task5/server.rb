@@ -1,4 +1,4 @@
-require_relative 'main'
+require_relative 'view'
 
 class MyApp
 
